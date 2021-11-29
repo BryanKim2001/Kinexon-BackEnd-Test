@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+
+  <h1>Kinexon Player Data Sample</h1>
+  <h2>Enter Player Data</h2>
+  <form action="/kinexon" method="POST">
+  <input type="text" placeholder="name" name="name"> <br />
+  <input type="number" placeholder="number" name="number"> <br />
+  <input type="date" placeholder="session date" name="date"> <br />
+  <input type="number" placeholder="distance" name="distance" step="any"> <br />
+  <input type="number" placeholder="Accum. Accel Load" name="accum" step="any"> <br />
+  <input type="number" placeholder="max speed" name="max_speed" step="any"> <br />
+  <input type="number" placeholder="time" name="time" step="any"> <br />
+  <input type="number" placeholder="Decels Load" name="decel" step="any"><br />
+  <input type="number" placeholder="Mechanical Load" name="mechLoad" step="any"> <br />
+  <input type="number" placeholder="changes in orientation" name="direction" step="any"> <br />
+  <input type="number" placeholder="exertions" name="exertion" step="any"> <br />
+  <button type="submit">Submit</button>
+  </form>
+  
+  <h2>Show Player Data</h2>
+
+<ul class="stats">
+  <% for(var i = 0; i < stats.length; i++) {%>
+    <li class="stat">
+      Name: <span><%= stats[i].name %></span> <br />
+      Number: <span><%= stats[i].number %></span><br />
+	  Session Date: <span><%= stats[i].date %></span><br />
+	  Distance: <span><%= stats[i].distance %></span><br />
+	  Accel Load: <span><%= stats[i].accum %></span><br />
+    </li>
+  <% } %>
+</ul>
+<br /><br />
+<div>
+  <h2>Update Player Profile</h2>
+  
+  <button id="update-button">Update Bryan's Data</button>
+</div>
+
+<script src="/main.js"></script>
+</body>
+</html>
